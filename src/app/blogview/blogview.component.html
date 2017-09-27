@@ -1,0 +1,9 @@
+<p>
+  blogview works!
+</p>
+
+<div *ngIf="post" class="blog-detail">
+<div *ngFor="let detail of post">
+<h3>{{ detail.title[0].value }}</h3>
+<p>{{ detail.body[0].value }}</p>
+</div>

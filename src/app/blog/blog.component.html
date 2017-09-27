@@ -1,0 +1,10 @@
+<p>
+  blog works!
+</p>
+
+<div *ngFor="let post of posts">
+<h3>{{ post.title[0].value }}</h3>
+<a (click)="showBlogDetail(post.nid[0].value)">Detail of Node {{ post.nid[0].value }}</a><br />
+<a (click)="removeBlog(post.nid[0].value)">Delete {{ post.nid[0].value }}</a>
+</div>
+<pager (pageChange)="onPageChange($event)" [pageCurrent]="pager.current" [itemsPerPage]="pager.itemsPerPage" [pageCount]="pager.pageCount"></pager>

@@ -1,0 +1,5 @@
+<nav class="pager" role="navigation">
+    <ul class="pager__items">
+	 <li *ngFor="let p of pages"><a [class.current-page]="p==_pageCurrent" (click)="onPageChange(p)">{{ p +1 }}</a></li>
+    </ul>
+</nav>
