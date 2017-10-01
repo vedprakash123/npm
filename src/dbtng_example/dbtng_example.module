@@ -1,0 +1,31 @@
+<?php
+
+
+/**
+ * @} End of "defgroup dbtng_example".
+ */
+
+use Drupal\dbtng_example\CelcomPrepareData;
+use Drupal\Core\Entity\EntityInterface;
+
+function dbtng_example_entity_insert(EntityInterface $entity) { 
+
+	if( $entity->getEntityTypeId() == 'node' ) {
+		$obj = new CelcomPrepareData();
+		$obj->getNodeType($entity);
+	}
+}
+
+function dbtng_example_entity_update(EntityInterface $entity) { 
+
+   if( $entity->getEntityTypeId() == 'node' ) {
+   	$obj = new CelcomPrepareData();
+		$obj->getNodeType($entity);
+	}
+}
+
+// Fine
+function dbtng_example_entity_delete(EntityInterface $entity) {
+	//print_r($entity->getEntityTypeId()); print_r($entity->id()); die(); // Remove reference entity
+}
+
